@@ -81,12 +81,21 @@
 	}
 	
 	
-	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){
-		
-		//$('.mobile-menu .menu-box').mCustomScrollbar();
-		
-		var mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
+	$(document).ready(function () {
+		// Smooth scrolling for mobile menu links
+		$('.mobile-menu .navigation a').on('click', function (e) {
+			e.preventDefault();
+			var target = $(this).attr('href');
+			$('body').removeClass('mobile-menu-visible');
+			$('html, body').animate({
+				scrollTop: $(target).offset().top
+			}, 800);
+		});
+	
+		// Rest of your existing code
+		if ($('.mobile-menu').length) {
+			// ... (your existing code)
+			var mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
 		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 		$('.sticky-header .main-menu').append(mobileMenuContent);
 		
@@ -149,8 +158,10 @@
         	}
 	    });
 		
-	}
-	
+		}
+	});
+
+
 	
 	
 	
