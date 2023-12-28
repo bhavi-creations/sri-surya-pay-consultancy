@@ -5140,7 +5140,8 @@
 
 .about-three{
 	position:relative;
-	margin-top:-155px;
+	/* margin-top:-155px; */
+	background-color:#EEF5FF;
 	z-index:1;
 }
 
